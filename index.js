@@ -6,7 +6,7 @@ const fs = require("fs");
 
 //Imports classes
 const {Triangle, Circle, Square} = require("./lib/shapes");
-const Text = require("./lib/text");
+// const Text = require("./lib/text");
 
 
 
@@ -14,7 +14,7 @@ const Text = require("./lib/text");
 function promptUser(){
         return inquirer.prompt([
             {
-                input: "input",
+                type: "input",
                 message: "Enter up to three (3) characters:",
                 name: "text",
                 validate: function(input){
@@ -25,18 +25,18 @@ function promptUser(){
                 }
             },
             {
-                input: "input",
+                type: "input",
                 message: "Enter text color using a color keyword (OR a hexadecimal number):",
                 name: "textColor"
             },
             {
-                input: "list",
+                type: "list",
                 message: "Select a shape:",
                 name: "shape",
                 choices: ["Triangle", "Circle", "Square"]
             },
             {
-                input: "input",
+                type: "input",
                 message: "Enter shape color color using a color keyword (OR a hexadecimal number):",
                 name: "shapeColor"
             }
@@ -59,13 +59,13 @@ function init(){
 
         switch (shape) {
             case "Triangle":
-                shapes = new Triangle(shapeColor);
+                shapes = new Triangle(shapeColor, textColor, text);
                 break;
             case "Circle":
-                shapes = new Circle(shapeColor);
+                shapes = new Circle(shapeColor, textColor, text);
                 break;
             case "Square":
-                shapes = new Square(shapeColor);
+                shapes = new Square(shapeColor, textColor, text);
                 break;
             default:
                 break;
@@ -73,7 +73,6 @@ function init(){
 
         //write the rest for text and text color
         // shapes.setColor(shapeColor);
-
 
 
         //write to file
