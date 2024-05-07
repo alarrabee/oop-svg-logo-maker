@@ -1,64 +1,82 @@
-const inquirer = require("inquirer");
 //Imports the Inquirer.js library so that it can be used to create interactive prompts and gather user input within the application.
+const inquirer = require("inquirer");
 
-const fs = require("fs");
 //Imports the File System module in Node.js allowing the code to use the functionality provided by the File System module through the fs variable. This functionality includes reading from and writing to files
+const fs = require("fs");
 
-const {Triangle, Circle, Square} = require("./lib/shapes");
 //Imports classes
+const {Triangle, Circle, Square} = require("./lib/shapes");
 
-//An array of questions for user input
-const questions = [
-    {
-        input: "input",
-        message: "Enter up to three (3) characters:",
-        name: "text"
-    },
-    {
-        input: "input",
-        message: "Enter text color using a color keyword (OR a hexadecimal number):",
-        name: "textColor"
-    },
-    {
-        input: "list",
-        message: "Select a shape:",
-        name: "shape",
-        choices: ["Circle", "Triangle", "Square"]
-    },
-    {
-        input: "input",
-        message: "Enter shape color color using a color keyword (OR a hexadecimal number):",
-        name: "shapeColor"
+
+
+//return inquirer.prompt will return a promise that resolves to an object containing the users answers to the questions presented by inquirer.prompt
+function promptUser(){
+        return inquirer.prompt([
+            {
+                input: "input",
+                message: "Enter up to three (3) characters:",
+                name: "text"
+            },
+            {
+                input: "input",
+                message: "Enter text color using a color keyword (OR a hexadecimal number):",
+                name: "textColor"
+            },
+            {
+                input: "list",
+                message: "Select a shape:",
+                name: "shape",
+                choices: ["Triangle", "Circle", "Square"]
+            },
+            {
+                input: "input",
+                message: "Enter shape color color using a color keyword (OR a hexadecimal number):",
+                name: "shapeColor"
+            }
+        ]);
     }
-];
 
-
-async function getLogo(){
-    try{
-        const answer = inquirer.prompt(questions)
-
-    await 
-    }
-    catch(err){
-
-    }
-}
 
 //Function to write svg file
 function writeToFile(fileName, data){
-    const {Triangle, Circle, Square}
-    fs.writeFile("fileName", "content", function(err) {
+    fs.writeFile(fileName, data, function(err) {
         console.log(err ? err : "Generated logo.svg");
     })
 }
 
 //Function to initialize the app
+//will prompt the user and handle the user's input with .then
 function init(){
-    inquirer.prompt(questions).then(function(data) {
+    promptUser().then(({text, textColor, shape, shapeColor}) => {
+        let shapes;
+
+        switch (shape) {
+            case "Triangle":
+                shapes = new Triangle(shapeColor);
+                break;
+            case "Circle":
+                shapes = new Circle(shapeColor);
+                break;
+            case "Square":
+                shapes = new Square(shapeColor);
+                break;
+            default:
+                break;
+        }
+
+        //write the rest for text and text color
+        shapes.setColor(shapeColor);
+
+        //write to file
         const fileName = "examples/logo.svg";
-        writeToFile(fileName, data);
-    });
+        writeToFile(fileName, shapes.render());
+    })
+    .catch (err => {
+        console.log("Error", err);
+    })
 }
+
+
 
 //Function call to initialize app
 init()
