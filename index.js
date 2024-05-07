@@ -6,6 +6,7 @@ const fs = require("fs");
 
 //Imports classes
 const {Triangle, Circle, Square} = require("./lib/shapes");
+const Text = require("./lib/text");
 
 
 
@@ -15,7 +16,13 @@ function promptUser(){
             {
                 input: "input",
                 message: "Enter up to three (3) characters:",
-                name: "text"
+                name: "text",
+                validate: function(input){
+                    if (input.length > 3){
+                        return "Please enter up to three (3) characters only!";
+                    }
+                    return true;
+                }
             },
             {
                 input: "input",
@@ -41,7 +48,7 @@ function promptUser(){
 function writeToFile(fileName, data){
     fs.writeFile(fileName, data, function(err) {
         console.log(err ? err : "Generated logo.svg");
-    })
+    });
 }
 
 //Function to initialize the app
@@ -65,7 +72,9 @@ function init(){
         }
 
         //write the rest for text and text color
-        shapes.setColor(shapeColor);
+        // shapes.setColor(shapeColor);
+
+
 
         //write to file
         const fileName = "examples/logo.svg";
