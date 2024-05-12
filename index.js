@@ -6,7 +6,6 @@ const fs = require("fs");
 
 //Imports classes
 const {Triangle, Circle, Square} = require("./lib/shapes");
-// const Text = require("./lib/text");
 
 
 
@@ -37,7 +36,7 @@ function promptUser(){
             },
             {
                 type: "input",
-                message: "Enter shape color color using a color keyword (OR a hexadecimal number):",
+                message: "Enter shape color using a color keyword (OR a hexadecimal number):",
                 name: "shapeColor"
             }
         ]);
@@ -71,9 +70,6 @@ function init(){
                 break;
         }
 
-        //write the rest for text and text color
-        // shapes.setColor(shapeColor);
-
 
         //write to file
         const fileName = "examples/logo.svg";
@@ -83,7 +79,6 @@ function init(){
         console.log("Error", err);
     })
 }
-
 
 
 //Function call to initialize app
