@@ -1,15 +1,15 @@
-//Imports the Inquirer.js library so that it can be used to create interactive prompts and gather user input within the application.
+//Imports the Inquirer.js library so that it can be used to create interactive prompts and gather user input within the application
 const inquirer = require("inquirer");
 
 //Imports the File System module in Node.js allowing the code to use the functionality provided by the File System module through the fs variable. This functionality includes reading from and writing to files
 const fs = require("fs");
 
-//Imports classes
+//Imports classes from shapes.js file
 const {Triangle, Circle, Square} = require("./lib/shapes");
 
 
 
-//return inquirer.prompt will return a promise that resolves to an object containing the users answers to the questions presented by inquirer.prompt
+//Will return a promise that resolves to an object containing the users answers to the questions presented by inquirer.prompt
 function promptUser(){
         return inquirer.prompt([
             {
@@ -51,8 +51,8 @@ function writeToFile(fileName, data){
 }
 
 //Function to initialize the app
-//will prompt the user and handle the user's input with .then
 function init(){
+    //Will prompt the user and handle the user's input with .then
     promptUser().then(({text, textColor, shape, shapeColor}) => {
         let shapes;
 
@@ -70,8 +70,7 @@ function init(){
                 break;
         }
 
-
-        //write to file
+        //Writes to file
         const fileName = "examples/logo.svg";
         writeToFile(fileName, shapes.render());
     })
