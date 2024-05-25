@@ -32,6 +32,11 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 ```
 
 ## Application Screenshot
+![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/4c1bf7c8-b115-463a-bc19-629017b38832)
+### Example Logos
+![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/b343841a-4a7a-4144-860c-10c264f072b9)   ![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/216bb307-6012-4825-8e4b-2d6fa3a94dd5)
+ ![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/751047e5-c7a2-4ac7-a235-dfdb564e5562)
+
 
 
 ## Installation Instructions
