@@ -32,6 +32,11 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 ```
 
 ## Application Screenshot
+![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/4c1bf7c8-b115-463a-bc19-629017b38832)
+### Example Logos
+![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/b343841a-4a7a-4144-860c-10c264f072b9)   ![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/216bb307-6012-4825-8e4b-2d6fa3a94dd5)
+ ![image](https://github.com/alarrabee/oop-svg-logo-maker/assets/149320486/751047e5-c7a2-4ac7-a235-dfdb564e5562)
+
 
 
 ## Installation Instructions
@@ -40,7 +45,10 @@ Prerequisites
 - npm
 
 1. Clone the repository
-2. Install dependencies
+2. ```bash
+   https://github.com/alarrabee/oop-svg-logo-maker.git
+   ```
+3. Install dependencies
    ```bash
    npm install
    ```
@@ -51,7 +59,8 @@ Prerequisites
 ## Usage Information
 1. Using the command-line answer each prompt as it appears and press enter.
 2. When all prompts have been successfully answered you will see the message **Generated logo.svg** displayed.
-3. Navigate to the examples folder to see your newly generaged SVG logo.
+3. Navigate to the examples folder to see your newly generaged SVG logo file.
+4. Open SVG file in a browser to preview your logo.
 
 ### Demo
 
