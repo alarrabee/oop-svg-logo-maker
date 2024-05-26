@@ -63,7 +63,7 @@ Prerequisites
 4. Open SVG file in a browser to preview your logo.
 
 ### Demo
-
+[View a video demonstration of the application](https://drive.google.com/file/d/1iM4E0FuWiF7vOi_uXr07z_u5pLHtYE22/view)
 
 ## Acknowledgments
 Guidance provided by edX Web Development Tutor Team (Megan Meyers)
