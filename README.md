@@ -59,7 +59,8 @@ Prerequisites
 ## Usage Information
 1. Using the command-line answer each prompt as it appears and press enter.
 2. When all prompts have been successfully answered you will see the message **Generated logo.svg** displayed.
-3. Navigate to the examples folder to see your newly generaged SVG logo.
+3. Navigate to the examples folder to see your newly generaged SVG logo file.
+4. Open SVG file in a browser to preview your logo.
 
 ### Demo
 
