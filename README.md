@@ -45,7 +45,10 @@ Prerequisites
 - npm
 
 1. Clone the repository
-2. Install dependencies
+2. ```bash
+   https://github.com/alarrabee/oop-svg-logo-maker.git
+   ```
+3. Install dependencies
    ```bash
    npm install
    ```
